@@ -2,7 +2,6 @@ package az.booking.bookshop.entity;
 
 
 import az.booking.bookshop.model.response.ERole;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -26,7 +25,6 @@ public class Role {
     @Enumerated(EnumType.STRING)
     ERole roleName;
 
-    @JsonIgnore
     @ManyToMany(mappedBy = "roles")
     Set<User> users;
 

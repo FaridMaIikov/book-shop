@@ -22,19 +22,16 @@ public class Book {
     @Column(name = "title")
     String title;
 
-    @Column(name = "synopsis",length = 1000)
+    @Column(name = "synopsis", length = 1000)
     String synopsis;
 
-    @ManyToMany
-    @JoinTable(name = "books_authors",
-            joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "author_id", referencedColumnName = "id"))
+    @ManyToMany(mappedBy = "books")
     List<Author> authors;
 
     @OneToMany(mappedBy = "book")
-    List<Comment>comments;
+    List<Comment> comments;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.LAZY)
     Genre genreName;
 
 }

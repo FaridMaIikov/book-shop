@@ -12,6 +12,8 @@ public interface CustomMapper {
 
     List<GenreDTO> genreToGenreDTO(List<Genre> genres);
 
+    GenreDTO genreToGenreDTO(Genre genre);
+
     List<AccountDTO> accountToAccountDTO(List<Account> accounts);
 
     List<AuthorDTO> authorToAuthorDTO(List<Author> authors);
@@ -21,5 +23,7 @@ public interface CustomMapper {
     UserDTO userToUserDTO(User user);
 
     List<UserDTO> userToUserDTO(List<User> users);
+
+    List<BookDTO> bookToBookDTO(List<Book> books);
 
 }

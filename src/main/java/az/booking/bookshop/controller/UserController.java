@@ -23,9 +23,5 @@ public class UserController {
         return userService.getAllUser();
     }
 
-    @GetMapping("user-email")
-    public UserDTO getUserByEmail(@RequestParam String email){
-        return userService.getUserByEmail(email);
-    }
 
 }

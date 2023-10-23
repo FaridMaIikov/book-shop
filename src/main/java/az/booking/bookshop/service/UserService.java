@@ -26,9 +26,4 @@ public class UserService {
         return userMapper.userToUserDTO(users);
     }
 
-
-    public UserDTO getUserByEmail(String email) {
-        User user = userRepository.findByEmail(email).orElseThrow(() -> new UserNotFoundException("user email not found"));
-        return userMapper.userToUserDTO(user);
-    }
 }

@@ -1,6 +1,5 @@
 package az.booking.bookshop.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -37,16 +36,13 @@ public class User {
     @Column(name = "registration_date", columnDefinition = "timestamp default now()")
     LocalDateTime registrationDate;
 
-    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "account_id")
     Account account;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "user")
     List<Comment> comments;
 
-    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"),
                inverseJoinColumns = @JoinColumn(name = "role_id"))

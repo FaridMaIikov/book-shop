@@ -1,6 +1,5 @@
 package az.booking.bookshop.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
@@ -47,7 +46,6 @@ public class Account {
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     Set<Role> roles;
 
-    @JsonIgnore
     @OneToOne(mappedBy = "account")
     User user;
 }

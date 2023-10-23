@@ -1,6 +1,5 @@
 package az.booking.bookshop.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -23,7 +22,6 @@ public class Genre {
     @Column(name = "genre_name")
     String genreName;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "genreName")
     List<Book> books;
 }

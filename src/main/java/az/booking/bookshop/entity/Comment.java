@@ -1,6 +1,5 @@
 package az.booking.bookshop.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -29,7 +28,6 @@ public class Comment {
     @Column(name = "review_date", columnDefinition = "timestamp default now()")
     LocalDateTime reviewDate;
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     User user;

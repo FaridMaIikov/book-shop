@@ -12,7 +12,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler
     public ErrorResponse handleUserNotFoundException(UserNotFoundException exception) {
-        return response(exception, HttpStatus.NOT_FOUND.value());
+        return response(exception,HttpStatus.NOT_FOUND.value());
     }
 
     private <T extends RuntimeException> ErrorResponse response(T exception, int statusCode) {
