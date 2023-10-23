@@ -1,7 +1,7 @@
 package az.booking.bookshop.service;
 
 import az.booking.bookshop.entity.Author;
-import az.booking.bookshop.exception.UserNotFoundException;
+import az.booking.bookshop.exception.NotFoundException;
 import az.booking.bookshop.model.response.AuthorDTO;
 import az.booking.bookshop.model.mapper.CustomMapper;
 import az.booking.bookshop.repository.AuthorRepository;
@@ -23,7 +23,7 @@ public class AuthorService {
 
     public AuthorDTO getAuthorByFullName(String fullName) {
         Author author = authorRepository.findAuthorByFullName(fullName)
-                .orElseThrow(() -> new UserNotFoundException("Author name not found"));
+                .orElseThrow(() -> new NotFoundException("No author found with this name"));
         return authorMapper.authorToAuthorDTO(author);
     }
 }

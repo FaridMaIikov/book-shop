@@ -36,7 +36,7 @@ public class User {
     @Column(name = "registration_date", columnDefinition = "timestamp default now()")
     LocalDateTime registrationDate;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id")
     Account account;
 
@@ -45,6 +45,6 @@ public class User {
 
     @ManyToMany
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"),
-               inverseJoinColumns = @JoinColumn(name = "role_id"))
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     List<Role> roles;
 }

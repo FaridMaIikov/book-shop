@@ -33,5 +33,4 @@ public class Book {
 
     @ManyToOne(fetch = FetchType.LAZY)
     Genre genreName;
-
 }

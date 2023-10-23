@@ -11,6 +11,6 @@ import java.util.Optional;
 
 public interface AuthorRepository extends  JpaRepository<Author, Long> {
 
-    @Query(value = "select a from Author a where a.fullName =:fullName")
+    @Query(value = "select a from Author a left join fetch a.books where a.fullName =:fullName ")
     Optional<Author> findAuthorByFullName(@Param("fullName") String fullName);
 }

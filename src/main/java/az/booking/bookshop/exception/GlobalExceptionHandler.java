@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler
-    public ErrorResponse handleUserNotFoundException(UserNotFoundException exception) {
+    public ErrorResponse handleUserNotFoundException(NotFoundException exception) {
         return response(exception,HttpStatus.NOT_FOUND.value());
     }
 

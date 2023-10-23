@@ -28,11 +28,11 @@ public class Comment {
     @Column(name = "review_date", columnDefinition = "timestamp default now()")
     LocalDateTime reviewDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "user_id")
     User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "book_id")
     Book book;
 }

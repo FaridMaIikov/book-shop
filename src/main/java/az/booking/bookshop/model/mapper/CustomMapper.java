@@ -20,10 +20,16 @@ public interface CustomMapper {
 
     AuthorDTO authorToAuthorDTO(Author author);
 
+    User userDTOToUser(UserDTO userDTO);
+
     UserDTO userToUserDTO(User user);
 
     List<UserDTO> userToUserDTO(List<User> users);
 
     List<BookDTO> bookToBookDTO(List<Book> books);
+
+    List<CommentDTO> commentToCommentDTO(List<Comment> comments);
+
+    CommentDTO commentToCommentDTO(Comment comment);
 
 }

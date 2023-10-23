@@ -1,7 +1,7 @@
 package az.booking.bookshop.service;
 
 import az.booking.bookshop.entity.User;
-import az.booking.bookshop.exception.UserNotFoundException;
+import az.booking.bookshop.exception.NotFoundException;
 import az.booking.bookshop.model.response.UserDTO;
 import az.booking.bookshop.model.mapper.CustomMapper;
 import az.booking.bookshop.repository.UserRepository;
@@ -17,7 +17,8 @@ public class UserService {
     private final CustomMapper userMapper;
 
     public UserDTO getUserById(Long id) {
-        User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("user not found"));
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("No user found with this ID"));
         return userMapper.userToUserDTO(user);
     }
 
