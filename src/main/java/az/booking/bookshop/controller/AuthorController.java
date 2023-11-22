@@ -1,6 +1,6 @@
 package az.booking.bookshop.controller;
 
-import az.booking.bookshop.model.response.AuthorDTO;
+import az.booking.bookshop.model.response.AuthorResponse;
 import az.booking.bookshop.service.AuthorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +17,12 @@ public class AuthorController {
     private final AuthorService authorService;
 
     @GetMapping
-    public List<AuthorDTO> getAllAuthors() {
+    public List<AuthorResponse> getAllAuthors() {
         return authorService.getAllAuthors();
     }
 
     @GetMapping("full-name")
-    public AuthorDTO getAuthorByFullName(@RequestParam(name = "fullName") String fullName) {
+    public AuthorResponse getAuthorByFullName(@RequestParam(name = "fullName") String fullName) {
         return authorService.getAuthorByFullName(fullName);
     }
 }

@@ -1,11 +1,11 @@
 package az.booking.bookshop.controller;
 
-import az.booking.bookshop.model.response.AccountDTO;
+import az.booking.bookshop.entity.Account;
+import az.booking.bookshop.model.request.AccountRequest;
+import az.booking.bookshop.model.response.AccountResponse;
 import az.booking.bookshop.service.AccountService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,7 +16,18 @@ public class AccountController {
     private final AccountService accountService;
 
     @GetMapping
-    public List<AccountDTO> getAllAccounts() {
+    public List<AccountResponse> getAllAccounts() {
         return accountService.getAllAccounts();
     }
+    @PutMapping("/{id}")
+    public void update(@PathVariable Long id,
+                       @RequestBody AccountRequest accountRequest){
+        accountService.update(id, accountRequest);
+    }
+
+    @DeleteMapping
+    public void delete(Account account) {
+        accountService.delete(account);
+    }
+
 }

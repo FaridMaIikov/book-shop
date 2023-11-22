@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 311020232
+      author: Farid
+      changes:
+        - createTable:
+            tableName: authors
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: full_name
+                  type: VARCHAR(255)
+              - column:
+                  name: biography
+                  type: TEXT
+              - column:
+                  name: date_of_birth
+                  type: TIMESTAMP
+

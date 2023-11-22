@@ -4,11 +4,11 @@ package az.booking.bookshop.model.response;
 
 import java.time.LocalDateTime;
 
-public record CommentDTO(
+public record CommentResponse(
         String reviewText,
         Integer likeCount,
         LocalDateTime reviewDate,
-        UserDTO userDTO,
-        BookDTO bookDTO
+        UserResponse userResponse,
+        BookResponse bookResponse
 ) {
 }

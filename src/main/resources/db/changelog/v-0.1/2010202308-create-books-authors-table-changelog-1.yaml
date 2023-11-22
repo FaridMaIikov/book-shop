@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 311020239
+      author: Farid
+      changes:
+        - createTable:
+            tableName: books_authors
+            columns:
+              - column:
+                  name: book_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: book_id
+                    referencedTableName: books
+                    referencedColumnNames: id
+              - column:
+                  name: author_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: author_id
+                    referencedTableName: authors
+                    referencedColumnNames: id

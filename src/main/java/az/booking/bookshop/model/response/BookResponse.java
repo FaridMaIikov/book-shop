@@ -1,6 +1,6 @@
 package az.booking.bookshop.model.response;
 
-public record BookDTO(
+public record BookResponse(
         String title,
         String synopsis
 ) {

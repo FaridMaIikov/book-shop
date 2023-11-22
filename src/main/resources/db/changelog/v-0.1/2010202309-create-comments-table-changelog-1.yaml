@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 311020234
+      author: Farid
+      changes:
+        - createTable:
+            tableName: comments
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: like_count
+                  type: BIGINT
+              - column:
+                  name: review_date
+                  type: TIMESTAMP
+                  defaultValueDate: "CURRENT_TIMESTAMP"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: review_text
+                  type: TEXT
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: user_id
+                    referencedTableName: users
+                    referencedColumnNames: id
+              - column:
+                  name: book_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: book_id
+                    referencedTableName: books
+                    referencedColumnNames: id

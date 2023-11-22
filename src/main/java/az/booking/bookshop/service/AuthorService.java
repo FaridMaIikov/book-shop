@@ -2,7 +2,7 @@ package az.booking.bookshop.service;
 
 import az.booking.bookshop.entity.Author;
 import az.booking.bookshop.exception.NotFoundException;
-import az.booking.bookshop.model.response.AuthorDTO;
+import az.booking.bookshop.model.response.AuthorResponse;
 import az.booking.bookshop.model.mapper.CustomMapper;
 import az.booking.bookshop.repository.AuthorRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,12 +16,12 @@ public class AuthorService {
     private final AuthorRepository authorRepository;
     private final CustomMapper authorMapper;
 
-    public List<AuthorDTO> getAllAuthors() {
+    public List<AuthorResponse> getAllAuthors() {
         List<Author> authors = authorRepository.findAll();
         return authorMapper.authorToAuthorDTO(authors);
     }
 
-    public AuthorDTO getAuthorByFullName(String fullName) {
+    public AuthorResponse getAuthorByFullName(String fullName) {
         Author author = authorRepository.findAuthorByFullName(fullName)
                 .orElseThrow(() -> new NotFoundException("No author found with this name"));
         return authorMapper.authorToAuthorDTO(author);

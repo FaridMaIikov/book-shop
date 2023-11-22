@@ -1,6 +1,6 @@
 package az.booking.bookshop.model.response;
 
-public record RoleDTO(
+public record RoleResponse(
         String roleName
 ) {
 }

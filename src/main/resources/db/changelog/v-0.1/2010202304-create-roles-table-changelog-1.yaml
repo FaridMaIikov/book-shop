@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 311020236
+      author: Farid
+      changes:
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: role_name
+                  type: VARCHAR(20)
+

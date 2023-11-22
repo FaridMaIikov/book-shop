@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: 311020237
+      author: Farid
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: first_name
+                  type: VARCHAR(50)
+              - column:
+                  name: last_name
+                  type: VARCHAR(50)
+              - column:
+                  name: email
+                  type: VARCHAR(100)
+              - column:
+                  name: contact_number
+                  type: VARCHAR(50)
+              - column:
+                  name: registration_date
+                  type: TIMESTAMP
+                  defaultValueDate: "CURRENT_TIMESTAMP"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: account_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: account_id
+                    referencedTableName: accounts
+                    referencedColumnNames: id
+
+

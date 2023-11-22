@@ -2,8 +2,8 @@ package az.booking.bookshop.model.response;
 
 import java.util.List;
 
-public record GenreDTO(
+public record GenreResponse(
         String genreName,
-        List<BookDTO> books
+        List<BookResponse> books
 ) {
 }

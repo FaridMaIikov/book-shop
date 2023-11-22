@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: 311020233
+      author: Farid
+      changes:
+        - createTable:
+            tableName: books
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: synopsis
+                  type: TEXT
+              - column:
+                  name: title
+                  type: TEXT
+              - column:
+                  name: genre_name_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: genre_name_id
+                    referencedTableName: genres
+                    referencedColumnNames: id
+
+
+
+
+
+
+
+
+
